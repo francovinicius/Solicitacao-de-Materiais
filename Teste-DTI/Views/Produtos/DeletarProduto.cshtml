@@ -1,0 +1,54 @@
+﻿@model ProdutosModel
+
+@{
+    ViewData["title"] = "Deletar Produto";
+}
+<div class="container p-5">
+
+    <div class="mb-5 text-center">
+        <h1>Cadastro de Usuarios</h1>
+    </div>
+
+
+    <form method="post" asp-controller="Produtos" asp-action="DeletarProduto">
+
+        <input type="hidden" asp-for="IdProduto" />
+
+        <h4 class="text-center my-2 text-danger">Tem certeza que deseja excluir?</h4>
+
+        <div class="mb-3">
+            <label for="NomeProduto" class="form-label">Nome</label>
+            <input type="text" class="form-control" asp-for="NomeProduto" disabled id="NomeProduto">
+            <span class="text-danger" asp-validation-for="NomeProduto"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="EANProduto" class="form-label">EAN</label>
+            <input type="text" class="form-control" asp-for="EANProduto" disabled id="EANProduto">
+            <span class="text-danger" asp-validation-for="EANProduto"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ValorUnitarioProduto" class="form-label">Valor Unitário</label>
+            <input type="text" class="form-control" asp-for="ValorUnitarioProduto" disabled id="ValorUnitarioProduto">
+            <span class="text-danger" asp-validation-for="ValorUnitarioProduto"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="QuantEstoqueProduto" class="form-label">Quant Estoque</label>
+            <input type="text" class="form-control" asp-for="QuantEstoqueProduto" disabled id="QuantEstoqueProduto">
+            <span class="text-danger" asp-validation-for="QuantEstoqueProduto"></span>
+        </div>
+
+
+        <div class="d-flex justify-content-end">
+            <div>
+                <button type="submit" class="btn btn-danger">Deletar</button>
+                <a class="btn btn-light nav-item" href="/Produtos">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

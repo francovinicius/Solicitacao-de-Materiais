@@ -1,0 +1,41 @@
+﻿@model ServicesModel
+
+<div class="container p-5">
+    <div class="mb-5 text-center">
+        <h1>Editar Serviço</h1>
+    </div>
+
+    <form method="post" asp-controller="Services" asp-action="EditarServico">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label for="Servico" class="form-label">Serviço</label>
+            <input type="text" class="form-control" asp-for="Servico" id="Servico" required>
+            <span class="text-danger" asp-validation-for="Servico"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="DescricaoServico" class="form-label">Descrição</label>
+            <input type="text" class="form-control" asp-for="DescricaoServico" id="DescricaoServico" required>
+            <span class="text-danger" asp-validation-for="DescricaoServico"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="FornecedoresIdFornecedores">Fornecedor</label>
+            <select asp-for="FornecedoresIdFornecedores" class="form-control" asp-items="@(new SelectList(Model.ListaFornecedores, "IdFornecedores", "NomeFornecedores"))">
+                <option value="">Selecione um fornecedor</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="PrazoEntrega" class="form-label">Prazo de Entrega</label>
+            <input type="text" class="form-control" asp-for="PrazoEntrega" id="PrazoEntrega">
+            <span class="text-danger" asp-validation-for="PrazoEntrega"></span>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-dark">Salvar Alterações</button>
+            <a class="btn btn-light nav-item" href="/Services">Voltar</a>
+        </div>
+    </form>
+</div>

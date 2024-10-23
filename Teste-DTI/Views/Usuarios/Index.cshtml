@@ -1,0 +1,38 @@
+﻿@model IEnumerable<UsuariosModel>
+
+<div class="d-flex flex-column container">
+    <div class="d-flex justify-content-between align-items-center my-5">
+        <h1>Tabela Usuarios</h1>
+        <a asp-controller="Usuarios" asp-action="CadastrarUsuario" class="btn btn-dark nav-item">Cadastrar</a>
+    </div>
+
+    <table class="my-5 table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Departamento</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                @foreach (var usuario in Model)
+                {
+                    <tr>
+                        <td>@usuario.MatriculaUsuario</td>
+                        <td>@usuario.NomeUsuario</td>
+                        <td>@usuario.DepartamentoUsuario</td>
+                        <td>
+                            <a asp-controller="Usuarios" asp-action="EditarUsuario" asp-route-id="@usuario.IdUsuario" class="btn btn-primary">Alterar</a>
+                            <a asp-controller="Usuarios" asp-action="DeletarUsuario" asp-route-id="@usuario.IdUsuario" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

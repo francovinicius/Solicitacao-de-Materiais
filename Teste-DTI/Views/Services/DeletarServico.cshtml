@@ -1,0 +1,29 @@
+﻿@model ServicesModel
+
+@{
+    ViewData["title"] = "Deletar Servicos";
+}
+
+<div class="container p-5">
+
+<div class="mb-5 text-center">
+    <h1>Alterar Usuarios</h1>
+</div>
+
+    <form method="post" asp-controller="Services" asp-action="DeletarServicoConfirmado">
+    <input type="hidden" asp-for="Id" />
+
+    <h4 class="text-center my-2 text-danger">Tem certeza que deseja excluir?</h4>
+
+
+    <div class="d-flex justify-content-end">
+        <div>
+            <button type="submit" class="btn btn-danger">Deletar</button>
+            <a class="btn btn-light nav-item" href="/Services]">Voltar</a>
+        </div>
+    </div>
+
+</form>
+
+
+</div>

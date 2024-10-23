@@ -1,0 +1,63 @@
+﻿@model FornecedoresModel
+
+@{
+    ViewData["title"] = "Editar Fornecedores";
+}
+<div class="container p-5">
+
+    <div class="mb-5 text-center">
+        <h1>Editar de Fornecedores</h1>
+    </div>
+
+
+    <form method="post" asp-controller="Fornecedores" asp-action="EditarFornecedor">
+
+        <input type="hidden" asp-for="IdFornecedores" />
+
+        <div class="mb-3">
+            <label for="matriculaUsuario" class="form-label">Nome</label>
+            <input type="text" class="form-control" asp-for="NomeFornecedores" id="NomeFornecedores">
+            <span class="text-danger" asp-validation-for="NomeFornecedores"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="nomeUsuario" class="form-label">Endereco</label>
+            <input type="text" class="form-control" asp-for="EnderecoFornecedores" id="EnderecoFornecedores">
+            <span class="text-danger" asp-validation-for="EnderecoFornecedores"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="departamentoUsuario" class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="EmailFornecedores" id="EmailFornecedores">
+            <span class="text-danger" asp-validation-for="EmailFornecedores"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="departamentoUsuario" class="form-label">CNPJ</label>
+            <input type="text" class="form-control" asp-for="CNPJFornecedores" id="CNPJFornecedores">
+            <span class="text-danger" asp-validation-for="CNPJFornecedores"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="departamentoUsuario" class="form-label">Inscricao Estadual</label>
+            <input type="text" class="form-control" asp-for="InscricaoEstatualFornecedores" id="InscricaoEstatualFornecedores">
+            <span class="text-danger" asp-validation-for="InscricaoEstatualFornecedores"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="departamentoUsuario" class="form-label">Inscricao Municipal</label>
+            <input type="text" class="form-control" asp-for="InscricaoMunicipalFornecedores" id="InscricaoMunicipalFornecedores">
+            <span class="text-danger" asp-validation-for="InscricaoMunicipalFornecedores"></span>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <div>
+                <button type="submit" class="btn btn-dark">Cadastrar</button>
+                <a class="btn btn-light nav-item" href="/Fornecedores">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

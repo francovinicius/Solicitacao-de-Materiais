@@ -1,0 +1,43 @@
+﻿@model UsuariosModel
+
+@{
+    ViewData["title"] = "Cadastrar Usuarios";
+}
+<div class="container p-5">
+
+    <div class="mb-5 text-center">
+        <h1>Cadastro de Usuarios</h1>
+    </div>
+
+
+    <form method="post" asp-controller="Usuarios" asp-action="CadastrarUsuario">
+
+        <div class="mb-3">
+            <label for="matriculaUsuario" class="form-label">Matricula</label>
+            <input type="number" class="form-control" asp-for="MatriculaUsuario" id="MatriculaUsuario">
+            <span class="text-danger" asp-validation-for="MatriculaUsuario"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="nomeUsuario" class="form-label">Nome de Usuário</label>
+            <input type="text" class="form-control" asp-for="NomeUsuario" id="NomeUsuario">
+            <span class="text-danger" asp-validation-for="NomeUsuario"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="departamentoUsuario" class="form-label">Departamento</label>
+            <input type="text" class="form-control" asp-for="DepartamentoUsuario" id="DepartamentoUsuario">
+            <span class="text-danger" asp-validation-for="DepartamentoUsuario"></span>
+        </div>
+        
+        <div class="d-flex justify-content-end">
+            <div>
+                <button type="submit" class="btn btn-dark">Cadastrar</button>
+                <a class="btn btn-light nav-item" href="/Usuarios">Voltar</a>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>

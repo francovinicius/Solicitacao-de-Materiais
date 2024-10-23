@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ServicesModel>
+
+<div class="d-flex flex-column container">
+    <div class="d-flex justify-content-between align-items-center my-5">
+        <h1>Tabela Servicos</h1>
+        <a asp-controller="Services" asp-action="CadastrarServico" class="btn btn-dark nav-item">Cadastrar</a>
+    </div>
+
+    <table class="my-5 table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Servico</th>
+                <th scope="col">Fornecedor</th>
+                <th scope="col">Descricao</th>
+                <th scope="col"> Prazo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                @foreach (var services in Model)
+                {
+                    <tr>
+                        <td>@services.Servico</td>
+                        <td>@services.NomeFornecedores</td>
+                        <td>@services.DescricaoServico</td>
+                        <td>@services.PrazoEntrega</td>
+                        <td>
+                            <a asp-controller="Services" asp-action="EditarServico" asp-route-id="@services.Id" class="btn btn-primary">Alterar</a>
+                            <a asp-controller="Services" asp-action="DeletarServico" asp-route-id="@services.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

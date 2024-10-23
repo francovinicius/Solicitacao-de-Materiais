@@ -1,0 +1,47 @@
+﻿@model Teste_DTI.Models.SolicitacaoMaterialModel
+
+@{
+    ViewData["Title"] = "Detalhe Ordem";
+}
+
+<div class="container p-5">
+    <div class="mb-5 text-center">
+        <h1>Detalhe da Solicitação</h1>
+    </div>
+
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Nº Ordem</label>
+            <input type="text" class="form-control" value="@Model.IdSolicitacao.ToString("D4")" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Produto</label>
+            <input type="text" class="form-control" value="@Model.NomeProduto" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fabricante</label>
+            <input type="text" class="form-control" value="@Model.Fabricante" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Quantidade</label>
+            <input type="number" class="form-control" value="@Model.Quantidade" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Departamento</label>
+            <input type="text" class="form-control" value="@Model.Departamento" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Usuário</label>
+            <input type="text" class="form-control" value="@Model.Usuario" disabled />
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-dark" href="@Url.Action("Index", "SolicitacaoMaterial")">Voltar</a>
+        </div>
+    </form>
+</div>

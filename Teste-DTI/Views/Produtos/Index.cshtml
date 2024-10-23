@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ProdutosModel>
+
+<div>
+
+    <div class="d-flex justify-content-between align-items-center my-5">
+        <h1>Tabela Produto</h1>
+        <div class="d-flex gap-1">
+            <a asp-controller="Produtos" asp-action="CadastrarProduto" class="btn btn-dark nav-item">Cadastrar</a>
+            <a class="btn btn-dark nav-item" href="/SolicitacaoMaterial">Solicitar Material</a>
+        </div>
+
+
+    </div>
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Produto</th>
+                <th scope="col">EAN</th>
+                <th scope="col">Valor Unitario</th>
+                <th scope="col">Quant Estoque</th>
+                <th scope="col"></th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                @foreach (var produtos in Model)
+                {
+                    <tr>
+                        <td>@produtos.NomeProduto</td>
+                        <td>@produtos.EANProduto</td>
+                        <td>@produtos.ValorUnitarioProduto</td>
+                        <td>@produtos.QuantEstoqueProduto</td>
+                        <td>
+                            <a asp-controller="Produtos" asp-action="EstoqueProduto" asp-route-id="@produtos.IdProduto" class="btn btn-primary">Controle de Estoque</a>
+                            <a asp-controller="Produtos" asp-action="EditarProduto" asp-route-id="@produtos.IdProduto" class="btn btn-primary">Alterar Produto</a>
+                            <a asp-controller="Produtos" asp-action="DeletarProduto" asp-route-id="@produtos.IdProduto" class="btn btn-danger">Excluir</a>
+                        </td>
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+
+</div>
